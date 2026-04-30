@@ -1,66 +1,57 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Code2, Palette, Zap } from "lucide-react"
 
 export default function AboutSection() {
-  const features = [
-    {
-      icon: Code2,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable code that stands the test of time.",
-    },
-    {
-      icon: Palette,
-      title: "Modern Design",
-      description: "Creating beautiful interfaces that users love to interact with.",
-    },
-    {
-      icon: Zap,
-      title: "Performance",
-      description: "Building fast, responsive applications that delight users.",
-    },
-  ]
-
   return (
-    <section className="py-16 px-6 lg:px-10 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent" />
-
-      <div className="max-w-5xl mx-auto relative">
-        <div className="text-center mb-12 max-w-2xl mx-auto">
-          <Badge variant="outline" className="mb-3 text-[11px]">About Me</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
-            Crafting digital solutions
-            <span className="block gradient-text">with precision</span>
+    <section className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-white">
+            I don't have an MBA. I never worked at corporate headquarters.
           </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            I&apos;m a passionate developer dedicated to building exceptional digital experiences.
-            With expertise across the full stack, I transform ideas into elegant, functional products.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            But I've trained <span className="text-primary font-semibold">1000's of office workers</span> in essential
+            survival skills and superior sales techniques. I believe in hard work's power to transform businesses.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4 mb-12">
-          {features.map((feature, index) => (
-            <Card key={index} className="group p-5 hover:border-primary/50 transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                  <feature.icon className="h-5 w-5 text-primary" />
-                </div>
-                <h3 className="text-base font-semibold font-heading mb-1">{feature.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <Card className="p-8 hover:shadow-lg transition-shadow">
+            <CardContent className="p-0">
+              <h3 className="text-2xl font-bold font-heading mb-4 text-primary">Beet Farmer & Sales Warrior</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                I've been perfecting beet cultivation since 1980. What began as family tradition became obsession:
+                planting, harvesting, selling and dominating the regional paper market.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                As a superior salesman, I've seen how proper preparation and German work ethic create unstoppable
+                success.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="p-8 hover:shadow-lg transition-shadow">
+            <CardContent className="p-0">
+              <h3 className="text-2xl font-bold font-heading mb-4 text-primary">Survival Training Expert</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                I don't just teach sales techniques. I teach preparedness and survival. My methods help employees
+                survive both office politics and actual bear attacks.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                There's no weakness here, just helping people become confident survivors, not just paper pushers.
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
-        <Card className="p-6 md:p-8 bg-gradient-to-r from-primary/8 via-secondary/8 to-accent/8 border-primary/20">
-          <CardContent className="p-0 text-center max-w-2xl mx-auto">
-            <h3 className="text-lg font-bold font-heading mb-2">My Philosophy</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              I believe great software comes from understanding users deeply, iterating quickly,
-              and never stopping learning. Every project is an opportunity to create something
-              that makes a difference.
+        {/* Core Belief */}
+        <Card className="p-8 bg-primary/5 border-primary/20">
+          <CardContent className="p-0 text-center">
+            <h3 className="text-2xl font-bold font-heading mb-4">My Core Belief</h3>
+            <p className="text-lg leading-relaxed max-w-3xl mx-auto">
+              Hard work and preparation create opportunity rather than waiting for it. I find that sweet spot where
+              German efficiency amplifies American entrepreneurship. At Dunder Mifflin, I've guided thousands of clients
+              through superior paper solutions, proving{" "}
+              <span className="text-primary font-semibold">anyone can become a top performer</span>.
             </p>
           </CardContent>
         </Card>

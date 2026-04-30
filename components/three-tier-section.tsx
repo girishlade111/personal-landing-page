@@ -1,71 +1,61 @@
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
-
-const tiers = [
-  {
-    title: "Discovery",
-    description: "Understanding your goals, challenges, and vision to build a solid foundation.",
-    items: ["Requirements gathering", "Market research", "Technical planning", "Strategy outline"],
-  },
-  {
-    title: "Development",
-    description: "Building your solution with clean code, modern tools, and agile iteration.",
-    items: ["Agile development", "Regular updates", "Quality testing", "Performance optimization"],
-  },
-  {
-    title: "Delivery",
-    description: "Launching your product with support to ensure smooth adoption and growth.",
-    items: ["Deployment", "Documentation", "Training", "Ongoing support"],
-  },
-]
+import { Brain, Target, Zap } from "lucide-react"
 
 export default function ThreeTierSection() {
   return (
-    <section className="py-16 px-6 lg:px-10 relative">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <Badge variant="outline" className="mb-3 text-[11px]">How I Work</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">
-            A process that
-            <span className="block gradient-text">delivers results</span>
-          </h2>
-          <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            Three phases to transform your ideas into reality, with clear communication at every step.
-          </p>
+    <section className="py-20 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold font-heading mb-6 text-white md:text-5xl">My Three Tier Approach</h2>
+          <p className="text-xl text-muted-foreground">The magic isn't in sales tools, it's in the preparation.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
-          {tiers.map((tier, index) => (
-            <Card
-              key={index}
-              className="relative group p-5 hover:border-primary/50 transition-all duration-300"
-            >
-              <CardContent className="p-0">
-                <div className="absolute top-4 right-4 w-7 h-7 rounded-full bg-muted flex items-center justify-center text-xs font-bold text-muted-foreground">
-                  {index + 1}
-                </div>
+        <div className="space-y-0 border border-border rounded-lg overflow-hidden">
+          <div className="flex items-center p-6 border-b border-solid border-white">
+            <div className="flex items-center min-w-0 flex-1">
+              <div className="p-3 bg-primary/10 rounded-lg mr-6">
+                <Brain className="h-6 w-6 text-primary" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-xl font-bold font-heading text-secondary-foreground">Preparation First</h3>
+              </div>
+            </div>
+            <div className="ml-6 text-right">
+              <div className="text-muted-foreground">Know Your Enemy</div>
+              <div className="text-muted-foreground">Superior Intelligence</div>
+            </div>
+          </div>
 
-                <h3 className="text-base font-bold font-heading mb-2">{tier.title}</h3>
-                <p className="text-xs text-muted-foreground mb-4">{tier.description}</p>
+          <div className="flex items-center p-6 border-b border-solid border-white">
+            <div className="flex items-center min-w-0 flex-1">
+              <div className="p-3 bg-primary/10 rounded-lg mr-6">
+                <Target className="h-6 w-6 text-primary" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-xl font-bold font-heading text-secondary-foreground">Strategic Thinking</h3>
+              </div>
+            </div>
+            <div className="ml-6 text-right">
+              <div className="text-muted-foreground">Battle Strategy</div>
+              <div className="text-muted-foreground">Client Domination</div>
+              <div className="text-muted-foreground">Market Structure</div>
+            </div>
+          </div>
 
-                <ul className="space-y-2">
-                  {tier.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-xs">
-                      <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {index < tiers.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2">
-                    <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
+          <div className="flex items-center p-6">
+            <div className="flex items-center min-w-0 flex-1">
+              <div className="p-3 bg-primary/10 rounded-lg mr-6">
+                <Zap className="h-6 w-6 text-primary" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-xl font-bold font-heading text-secondary-foreground">Execute With Precision</h3>
+              </div>
+            </div>
+            <div className="ml-6 text-right">
+              <div className="text-muted-foreground">German Efficiency</div>
+              <div className="text-muted-foreground">Superior Execution</div>
+              <div className="text-muted-foreground">Beet-Level Precision</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
