@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   title: "Ciara Wearen - AI Education Lead & Product Manager",
   description:
     "Creator of the Prompt Driven Development Framework. Helping non-coders build real, working apps using AI.",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
