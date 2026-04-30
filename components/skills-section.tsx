@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { skills } from "@/data/portfolio-data"
 
 export default function SkillsSection() {
@@ -42,18 +43,5 @@ export default function SkillsSection() {
         </div>
       </div>
     </section>
-  )
-}
-
-function Badge({ children, variant = "default", className = "" }: { children: React.ReactNode; variant?: string; className?: string }) {
-  const baseClasses = "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium"
-  const variantClasses = variant === "outline"
-    ? "border border-border bg-transparent"
-    : "bg-primary text-primary-foreground"
-
-  return (
-    <span className={`${baseClasses} ${variantClasses} ${className}`}>
-      {children}
-    </span>
   )
 }
