@@ -17,9 +17,9 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Ciara Wearen - AI Education Lead & Product Manager",
+  title: "Portfolio — Building digital experiences that matter",
   description:
-    "Creator of the Prompt Driven Development Framework. Helping non-coders build real, working apps using AI.",
+    "Full-stack designer & engineer crafting elegant, performant products from concept to launch.",
 }
 
 export default function RootLayout({

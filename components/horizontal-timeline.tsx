@@ -1,7 +1,7 @@
 "use client"
 import { cn } from "@/lib/utils"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-import { Check, Circle } from "lucide-react"
+import { Check } from "lucide-react"
 
 interface TimelineEvent {
   id: string
@@ -18,69 +18,60 @@ interface HorizontalTimelineProps {
 
 const HorizontalTimeline = ({ events = [], className }: HorizontalTimelineProps) => {
   return (
-    <div className={cn("w-full bg-background", className)}>
+    <div className={cn("w-full", className)}>
       <ScrollArea className="w-full">
-        <div className="flex items-center gap-0 p-8 min-w-max">
-          {events.map((event, index) => (
-            <div key={event.id} className="flex items-center">
-              {/* Event Node */}
-              <div className="flex flex-col items-center min-w-[200px]">
-                {/* Date */}
-                <div className="text-xs text-muted-foreground mb-2 font-medium">{event.date}</div>
+        <div className="relative px-8 pt-10 pb-6 min-w-max">
+          {/* Connecting rail */}
+          <div className="absolute left-8 right-8 top-[5.25rem] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-                {/* Dot */}
-                <div
-                  className={cn(
-                    "relative flex items-center justify-center w-4 h-4 rounded-full border-2 bg-background z-10",
-                    event.status === "completed" && "border-primary bg-primary",
-                    event.status === "current" && "border-primary bg-background",
-                    event.status === "upcoming" && "border-muted-foreground bg-background",
-                  )}
-                >
-                  {event.status === "completed" && <Check className="w-2.5 h-2.5 text-primary-foreground" />}
-                  {event.status === "current" && <Circle className="w-2 h-2 fill-primary text-primary" />}
+          <div className="flex items-start gap-0">
+            {events.map((event) => (
+              <div key={event.id} className="flex flex-col items-center min-w-[220px] px-3 group">
+                {/* Date pill */}
+                <div className="text-[10px] font-mono tracking-widest text-muted-foreground mb-3 px-2.5 py-1 rounded-full border border-border/60 bg-card/60">
+                  {event.date}
                 </div>
 
-                {/* Title and Description */}
-                <div className="mt-4 text-center max-w-[180px]">
-                  <h3
+                {/* Dot */}
+                <div className="relative flex items-center justify-center mb-5">
+                  {event.status === "current" && (
+                    <span className="absolute h-6 w-6 rounded-full bg-primary/30 animate-ping" />
+                  )}
+                  <div
                     className={cn(
-                      "font-medium mb-1 text-sm leading-tight",
-                      event.status === "completed" && "text-foreground",
-                      event.status === "current" && "text-primary",
-                      event.status === "upcoming" && "text-muted-foreground",
+                      "relative flex items-center justify-center w-5 h-5 rounded-full border-2 z-10 transition-transform group-hover:scale-110",
+                      event.status === "completed" && "border-primary bg-primary",
+                      event.status === "current" && "border-primary bg-primary shadow-lg shadow-primary/50",
+                      event.status === "upcoming" && "border-muted-foreground/40 bg-background",
                     )}
                   >
-                    {event.title.split(" ").length > 2 ? (
-                      <>
-                        {event.title
-                          .split(" ")
-                          .slice(0, Math.ceil(event.title.split(" ").length / 2))
-                          .join(" ")}
-                        <br />
-                        {event.title
-                          .split(" ")
-                          .slice(Math.ceil(event.title.split(" ").length / 2))
-                          .join(" ")}
-                      </>
-                    ) : (
-                      event.title
+                    {event.status === "completed" && <Check className="w-3 h-3 text-primary-foreground" strokeWidth={3} />}
+                    {event.status === "current" && <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground" />}
+                  </div>
+                </div>
+
+                {/* Card */}
+                <div className={cn(
+                  "text-center max-w-[200px] px-3 py-3 rounded-xl border transition-all duration-300",
+                  event.status === "current"
+                    ? "border-primary/40 bg-primary/5"
+                    : "border-transparent group-hover:border-border/60 group-hover:bg-card/40",
+                )}>
+                  <h3
+                    className={cn(
+                      "font-semibold mb-1 text-sm leading-tight tracking-tight",
+                      event.status === "current" ? "text-primary" : "text-foreground",
                     )}
+                  >
+                    {event.title}
                   </h3>
                   {event.description && (
-                    <p className="text-xs text-muted-foreground leading-relaxed">{event.description}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed mt-1.5">{event.description}</p>
                   )}
                 </div>
               </div>
-
-              {/* Connecting Line */}
-              {index < events.length - 1 && (
-                <div
-                  className={cn("h-0.5 w-16 -mx-8 z-0", event.status === "completed" ? "bg-primary" : "bg-border")}
-                />
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
