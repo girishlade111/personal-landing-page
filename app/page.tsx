@@ -1,10 +1,13 @@
 "use client"
+import Navbar from "@/components/navbar"
 
 export default function HomePage() {
   return (
-    <div style={{ minHeight: "100vh", background: "#fff", color: "#000", padding: "40px" }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "20px" }}>Hello World</h1>
-      <p>This is a test page.</p>
+    <div className="min-h-screen bg-background relative">
+      <Navbar />
+      <main style={{ paddingTop: "80px", padding: "40px" }}>
+        <h1>Hello World</h1>
+      </main>
     </div>
   )
 }
