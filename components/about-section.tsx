@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Code2, Palette, Zap } from "lucide-react"
 
 export default function AboutSection() {
