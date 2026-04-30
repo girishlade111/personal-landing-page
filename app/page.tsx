@@ -1,6 +1,7 @@
 "use client"
 import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
+import AboutSection from "@/components/about-section"
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
+        <AboutSection />
       </main>
     </div>
   )
