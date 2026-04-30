@@ -1,10 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Outfit } from "next/font/google"
+import { Space_Grotesk } from "next/font/google"
 import { DM_Sans } from "next/font/google"
 import "./globals.css"
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-heading",
@@ -17,9 +17,10 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Portfolio — Building digital experiences that matter",
+  title: "Ciara Wearen - AI Education Lead & Product Manager",
   description:
-    "Full-stack designer & engineer crafting elegant, performant products from concept to launch.",
+    "Creator of the Prompt Driven Development Framework. Helping non-coders build real, working apps using AI.",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -28,12 +29,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
       <head>
         <style>{`
 html {
   font-family: ${dmSans.style.fontFamily};
-  --font-heading: ${outfit.style.fontFamily};
+  --font-heading: ${spaceGrotesk.style.fontFamily};
   --font-body: ${dmSans.style.fontFamily};
 }
         `}</style>

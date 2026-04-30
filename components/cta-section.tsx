@@ -1,35 +1,31 @@
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Mail, ArrowRight } from "lucide-react"
+import { Mail, Linkedin, ExternalLink } from "lucide-react"
 
 export default function CTASection() {
   return (
-    <section className="py-16 px-6 lg:px-10 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[80px]" />
+    <section className="py-20 px-4 bg-secondary text-secondary-foreground">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">I don't just teach you how to sell paper.</h2>
+        <p className="text-xl mb-8 opacity-90">I teach you how to think like a warrior.</p>
+        <p className="text-2xl font-bold font-heading mb-8">Want to dominate your market? Let's talk.</p>
 
-      <div className="max-w-3xl mx-auto relative text-center">
-        <Badge className="mb-4 text-[11px]">Get in Touch</Badge>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
-          Ready to start your
-          <span className="block gradient-text">next project?</span>
-        </h2>
-        <p className="text-sm text-muted-foreground max-w-lg mx-auto mb-8">
-          I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button size="sm" className="text-sm font-medium px-6 py-2.5 group">
-            <Mail className="mr-2 h-4 w-4" />
-            hello@example.com
-            <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            size="lg"
+            variant="outline"
+            className="text-lg px-8 py-6 bg-transparent border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
+          >
+            <Mail className="mr-2 h-5 w-5" />
+            dwight@schrutefarms.com
           </Button>
           <Button
-            size="sm"
+            size="lg"
             variant="outline"
-            className="text-sm font-medium px-6 py-2.5"
+            className="text-lg px-8 py-6 bg-transparent border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary"
           >
-            View Projects
+            <Linkedin className="mr-2 h-5 w-5" />
+            Visit Schrute Farms
+            <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>

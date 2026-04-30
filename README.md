@@ -5,7 +5,8 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-06B6D4?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind CSS-4-06B6D4?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
 
 ---
 
@@ -49,6 +50,7 @@ flowchart TB
         direction LR
         Utils[utils.ts]
         Theme[Theme Provider]
+        Analytics[Vercel Analytics]
     end
 
     subgraph Frameworks["Framework & Libraries"]
@@ -61,7 +63,7 @@ flowchart TB
 
     subgraph Deployment["Deployment"]
         direction LR
-        Cloud[Cloud Platform]
+        Vercel[Vercel Platform]
         Git[Git Repository]
     end
 
@@ -83,7 +85,7 @@ flowchart TB
 - **Skills Display** - Visual skills section with modern card design
 - **Three Tier Services** - Tiered service/project showcase section
 - **Call to Action** - Engaging CTA section with contact prompt
-- **SEO Optimized** - Performance tracking ready
+- **SEO Optimized** - Built-in Vercel Analytics for performance tracking
 
 ### UI Components
 - Custom button component with multiple variants
@@ -130,6 +132,10 @@ flowchart TB
 - **PostCSS** - CSS transformations
 - **Autoprefixer** - CSS vendor prefixes
 - **Tailwind CSS Animate** - Animation utilities for Tailwind
+
+### Deployment & Analytics
+- **Vercel** - Frontend cloud platform
+- **@vercel/analytics** - Web analytics
 
 ---
 
@@ -207,7 +213,7 @@ Create a `.env.local` file for local development:
 
 ```env
 # Analytics (optional)
-NEXT_PUBLIC_ANALYTICS_ID=your-analytics-id
+NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your-analytics-id
 ```
 
 ### Key Configuration Files
@@ -279,13 +285,15 @@ personal-landing-page/
 
 ## Deployment
 
-### Cloud Platform (Recommended)
+### Vercel (Recommended)
 
-The project can be deployed to any Next.js-compatible hosting:
+The project is pre-configured for Vercel deployment:
 
-1. **Connect Repository** to your preferred hosting
+1. **Connect Repository** to Vercel
 2. **Automatic Deployments** on push to main branch
-3. **Custom Domain** configuration available in dashboard
+3. **Custom Domain** configuration available in Vercel dashboard
+
+**Live URL**: [https://vercel.com/gileb64375-5584s-projects/v0-personal-landing-page](https://vercel.com/gileb64375-5584s-projects/v0-personal-landing-page)
 
 ### Manual Deployment
 
@@ -293,7 +301,11 @@ The project can be deployed to any Next.js-compatible hosting:
 # Build the project
 npm run build
 
-# Deploy to your hosting provider
+# Deploy to Vercel
+vercel deploy
+
+# Or for production
+vercel deploy --prod
 ```
 
 ---
@@ -316,6 +328,7 @@ This project is for personal use. All rights reserved.
 
 ## Acknowledgments
 
+- Built with [v0.app](https://v0.app) - AI-powered UI builder
 - UI components from [shadcn/ui](https://ui.shadcn.com)
 - Icons from [Lucide](https://lucide.dev)
 - 3D graphics powered by [Three.js](https://threejs.org)
