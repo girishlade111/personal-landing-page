@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${dmSans.variable} dark`}>
+    <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
       <head>
         <style>{`
 html {
