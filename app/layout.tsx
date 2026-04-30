@@ -1,10 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Space_Grotesk } from "next/font/google"
+import { Outfit } from "next/font/google"
 import { DM_Sans } from "next/font/google"
 import "./globals.css"
 
-const spaceGrotesk = Space_Grotesk({
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-heading",
@@ -28,12 +28,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable} dark`}>
+    <html lang="en" className={`${outfit.variable} ${dmSans.variable} dark`}>
       <head>
         <style>{`
 html {
   font-family: ${dmSans.style.fontFamily};
-  --font-heading: ${spaceGrotesk.style.fontFamily};
+  --font-heading: ${outfit.style.fontFamily};
   --font-body: ${dmSans.style.fontFamily};
 }
         `}</style>
