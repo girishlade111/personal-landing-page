@@ -332,3 +332,6 @@ This project is for personal use. All rights reserved.
 - UI components from [shadcn/ui](https://ui.shadcn.com)
 - Icons from [Lucide](https://lucide.dev)
 - 3D graphics powered by [Three.js](https://threejs.org)
+---
+
+**Built by Girish Lade** — [ladestack.in](https://ladestack.in)
